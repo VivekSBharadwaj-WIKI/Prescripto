@@ -1,7 +1,7 @@
 import React from "react";
 import { assets } from "../assets/assets_frontend/assets";
 
-const Hero = () => {
+const Header = () => {
   return (
     <div className="h-[500px] max-w-7xl mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl px-10 flex flex-col md:flex-row items-center justify-between">
       
@@ -40,4 +40,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Header;
