@@ -1,29 +1,30 @@
 import React from "react";
 import { doctors } from "../assets/assets_frontend/assets";
+import { useNavigate } from "react-router-dom";
 
 const DoctorCards = ({
   limit,
   grid = "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
   selected,
 }) => {
+  const navigate = useNavigate();
 
   let filteredDoctors = doctors;
 
   if (selected) {
-    filteredDoctors = doctors.filter(
-      (doc) => doc.speciality === selected
-    );
+    filteredDoctors = doctors.filter((doc) => doc.speciality === selected);
   }
 
   const displayedDoctors = filteredDoctors.slice(
     0,
-    limit || filteredDoctors.length
+    limit || filteredDoctors.length,
   );
 
   return (
     <div className={`grid ${grid} gap-6`}>
       {displayedDoctors.map((doc) => (
         <div
+          onClick={() => navigate(`/doctor/${doc._id}`)}
           key={doc._id}
           className="border border-gray-300 rounded-xl p-4 shadow hover:shadow-lg transition"
         >
