@@ -11,7 +11,7 @@ const TopDoctorsBook = () => {
           Simply browse through our extensivve list of trusted doctors.
         </p>
       </div>
-      <DoctorCards />
+      <DoctorCards limit={5} grid="grid-cols-1 sm:grid-cols-5"/>
       <div className="flex justify-center mt-6">
         <Link
           to="/doctors"

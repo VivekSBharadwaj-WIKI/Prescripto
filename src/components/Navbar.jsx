@@ -10,7 +10,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 border-b border-gray-400">
         {/* Logo */}
         <div className="flex items-center gap-2">
-            <img src={assets.logo} alt="logo" className="w-35"/>
+          <Link to="/">
+            <img src={assets.logo} alt="logo" className="w-35" />
+          </Link>
         </div>
 
         {/* Center Links */}
