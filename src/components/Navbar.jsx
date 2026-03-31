@@ -3,11 +3,16 @@ import { assets, doctors } from "../assets/assets_frontend/assets";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [islogged, setIslogged] = useState(false);
+  const [islogged, setIslogged] = useState(true);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  let dropdown = () => {
+    setShowDropdown(!showDropdown);
+  }
 
   return (
     <nav>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 border-b border-gray-400">
+      <div className=" h-[77px] max-w-7xl mx-auto flex items-center justify-between px-6 py-4 border-b border-gray-400">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Link to="/">
@@ -53,9 +58,18 @@ const Navbar = () => {
         {/* Right Button */}
         <button
           onClick={() => setIslogged(!islogged)}
-          className="bg-blue-500 text-white px-7 py-2 rounded-full text-sm hover:bg-blue-600 transition"
+          className="text-white rounded-full text-sm w-1/8"
         >
-          {islogged ? "Logout" : "Create account"}
+          {islogged ? (
+            <div>
+              <div className="w-full bg-blue-500 rounded-full flex items-center gap-2">
+                <img src={assets.profile_pic} alt="" className="w-10 h-10 rounded-full bg-transparent border-1 border-black m-1"/>
+                <button onClick={dropdown} className="">My Account</button>
+              </div>
+            </div>
+            ) : (
+            <div><p className="w-full px-6 py-3 m-1 bg-blue-500 text-white rounded-full">Create Account</p></div>
+            )}
         </button>
       </div>
     </nav>
