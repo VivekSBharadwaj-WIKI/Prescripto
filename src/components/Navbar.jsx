@@ -64,7 +64,7 @@ const Navbar = () => {
             <div>
               <div className="w-full bg-blue-500 rounded-full flex items-center gap-2">
                 <img src={assets.profile_pic} alt="" className="w-10 h-10 rounded-full bg-transparent border-1 border-black m-1"/>
-                <button onClick={dropdown} className="">My Account</button>
+                
               </div>
             </div>
             ) : (
